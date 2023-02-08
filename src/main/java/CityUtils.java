@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class CityUtils {
     /**
-     * Загрузка данных о городах в массив
+     * Разбор строки с данными о городе
      */
     public static List<City> parse() {
         List<City> cities = new ArrayList<>();
@@ -25,7 +25,7 @@ public class CityUtils {
     }
 
     /**
-     * Разбор строки с данными о городе
+     * Загрузка данных о городах в массив
      */
 
     private static City parse(String line) {
