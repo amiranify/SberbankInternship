@@ -1,6 +1,8 @@
 import java.text.MessageFormat;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String... args) {
@@ -51,6 +53,14 @@ public class Main {
         cities.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
         cities.forEach(System.out::println);
         System.out.println();
+
+        /**
+         * поиск количества городов в разрезе регионов
+         */
+
+        Map<String, Integer> regions = new HashMap<>();
+        cities.forEach(city -> regions.merge(city.getRegion(), 1, Integer::sum));
+        regions.forEach((k, v) -> System.out.println(MessageFormat.format(" {0} - {1}", k, v)));
 
     }
 }
